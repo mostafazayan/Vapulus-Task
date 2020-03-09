@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="cont-txt-search">
+        <input class="txt-serach" #myInput [(ngModel)]="firstname" (input)="search()" placeholder="Search Contacts"
+            type="text">
+    </div>
+    <div class="cont-nav">
+        <label>&nbsp;&nbsp;Add New Contacts</label>
+        <a href="#" [routerLink]="['/add']"><i class="material-icons">add</i></a>
+    </div>
+    <div class="latest-contacts">
+        <div class="header">&nbsp;&nbsp;Lastest Contacts</div>
+        <div class="rec-contact" *ngFor="let contact of contacts">
+            <img [src]="contact.image | json" alt="image" class="img">
+            <div class="content">
+                <div id="name">{{ contact.firstName }}</div>
+                <div>{{ contact.email }}</div>
+            </div>
+        </div>
+    </div>
+</div>

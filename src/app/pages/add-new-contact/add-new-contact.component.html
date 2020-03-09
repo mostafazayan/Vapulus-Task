@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="header">Add a New Contact</div>
+    <div class="contact-info">
+        <img src="" type="file" alt="image" (change)="onFileSelected($event)">
+        <button class="btn-flat">Add Photo</button>
+    </div>
+    <form>
+        <div class="input-field col s6">
+            <i class="material-icons prefix">account_circle</i>
+            <input [(ngModel)]="contact.firstName" #firsName="ngModel" name="firstName" placeholder="First Name"
+                id="icon_prefix" type="text" class="validate">
+        </div>
+        <div class="input-field col s6">
+            <i class="material-icons prefix">account_circle</i>
+            <input [(ngModel)]="contact.lastName" #lastName="ngModel" name="lastName" placeholder="Last Name"
+                id="icon_prefix" type="text" class="validate">
+        </div>
+        <div class="input-field col s6">
+            <i class="material-icons prefix">phone</i>
+            <input [(ngModel)]="contact.phone" #phone="ngModel" name="phone" placeholder="Phone" id="icon_telephone"
+                type="tel" class="validate">
+        </div>
+        <div class="input-field col s12">
+            <i class="material-icons prefix">email</i>
+            <input [(ngModel)]="contact.email" #email="ngModel" name="email" placeholder="Email" id="email" type="email"
+                class="validate">
+        </div>
+        <button (click)="onAddContact()" class="btn btn-primary submit">Add Contact</button>
+        <button [routerLink]="['/']" class="btn">Cancel</button>
+    </form>
+</div>
